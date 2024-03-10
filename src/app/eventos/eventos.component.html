@@ -1,0 +1,49 @@
+<div class="container mt-5 conten">
+  <div class="row align-items-center titulo">
+    <div class="col-md-10"><h2>Lista de Eventos</h2></div>
+    <div class="col-md-2 text-right">
+      <button class="btn btn-info botonc1" [routerLink]="'/nuevoEvento'">
+        <i class="bi bi-ui-checks"></i> Nuevo evento
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="alerta" class="alert alert-{{ alerta.tipo }}" role="alert">
+    {{ alerta.mensaje }}
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>IdEvento</th>
+        <th>Nombre de la Institución</th>
+        <th>Costo del Servicio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evento of eventos">
+        <td>{{ evento.idEvento }}</td>
+        <td>{{ evento.nombreInstitucion }}</td>
+        <td>{{ "$" + evento.costoServicio }}</td>
+        <td>
+          <a
+            class="btn btn-info margen botonc1"
+            [routerLink]="['/verDetalle', evento.idEvento]"
+            title="Ver Detalle"
+          >
+            <i class="bi bi-eye-fill"></i>
+          </a>
+
+          <button
+            class="btn btn-danger botonc2"
+            (click)="eliminarEvento(evento.idEvento)"
+            title="Eliminar evento"
+          >
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

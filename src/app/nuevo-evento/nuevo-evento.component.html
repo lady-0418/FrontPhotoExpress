@@ -1,0 +1,129 @@
+<div class="container mt-5 margenFinal conten">
+  <div class="row align-items-center titulo">
+    <div class="col-md-10"><h2>Registrar Nuevo Evento</h2></div>
+    <div class="col-md-2 text-right">
+      <button class="btn btn-info botonc1" [routerLink]="'/Eventos'">
+        <i class="bi bi-card-list"></i> Eventos
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="mensajeExito" class="alert alert-success mt-3" role="alert">
+    {{ mensajeExito }}
+  </div>
+  <form (submit)="registrarEvento()" class="form-conten">
+    <div class="form-group row">
+      <label for="nombreInstitucion" class="col-md-3 col-form-label">
+        Nombre de la Institución:
+      </label>
+      <div class="col-md-9">
+        <input
+          type="text"
+          class="form-control"
+          id="nombreInstitucion"
+          [(ngModel)]="nombreInstitucion"
+          name="nombreInstitucion"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="direccionInstitucion" class="col-md-3 col-form-label"
+        >Dirección de la Institución:</label
+      >
+      <div class="col-md-9">
+        <input
+          type="text"
+          class="form-control"
+          id="direccionInstitucion"
+          [(ngModel)]="direccionInstitucion"
+          name="direccionInstitucion"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="numeroAlumnos" class="col-md-3 col-form-label"
+        >Número de Alumnos:</label
+      >
+      <div class="col-md-9">
+        <input
+          type="number"
+          class="form-control"
+          id="numeroAlumnos"
+          [(ngModel)]="numeroAlumnos"
+          name="numeroAlumnos"
+          (change)="calcularCostoServicio()"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="servicioTogaBirrete" class="col-md-3 col-form-label"
+        >Servicio de Toga y Birrete:</label
+      >
+      <div class="col-md-9">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="servicioTogaBirrete"
+          [(ngModel)]="servicioTogaBirrete"
+          name="servicioTogaBirrete"
+          (change)="calcularCostoServicio()"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="horaInicio" class="col-md-3 col-form-label"
+        >Hora de Inicio:</label
+      >
+      <div class="col-md-9">
+        <input
+          type="time"
+          class="form-control"
+          id="horaInicio"
+          [(ngModel)]="horaInicio"
+          name="horaInicio"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="fechaEvento" class="col-md-3 col-form-label"
+        >Fecha del Evento:</label
+      >
+      <div class="col-md-9">
+        <input
+          type="date"
+          class="form-control"
+          id="fechaEvento"
+          [(ngModel)]="fechaEvento"
+          name="fechaEvento"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="costoServicio" class="col-md-3 col-form-label"
+        >Costo del Servicio:</label
+      >
+      <div class="col-md-9">
+        <input
+          type="text"
+          class="form-control"
+          id="costoServicio"
+          [(ngModel)]="costoServicio"
+          name="costoServicio"
+          disabled
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-12 text-right">
+        <button type="submit" class="btn btn-primary">
+          <i class="bi bi-cloud-upload-fill"></i> Registrar Evento
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

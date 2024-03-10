@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+.margenFinal{
+    margin-bottom: 20px;
+}
+.conten{
+    border: solid thin rgb(200,200,200);
+    border-radius: 5px;
+    margin-bottom:20px ;
+    -webkit-box-shadow: 1px 0px 18px 0px rgba(171,171,171,1);
+    -moz-box-shadow: 1px 0px 18px 0px rgba(171,171,171,1);
+    
+}
+.botonc1{
+    background-color:#CFA35A !important;
+    border: none !important;
+    
+}
+.botonc2{
+    background-color:#CD547E !important;
+    border: none !important;
+}
+.titulo{
+    background-color: #065CF1;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: white;
+}
+.form-conten{
+    padding: 10px;
+}
+.row{
+    padding: 5px 50px;
+}
